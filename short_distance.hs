@@ -39,7 +39,8 @@ groupsOf n xs = take n xs : groupsOf n (drop n xs)
 
 
 main = do
-    let args = [50,10,30,5,90,20,40,2,25,10,8,0]::[Int]
+    --let args = [50,10,30,5,90,20,40,2,25,10,8,0]::[Int]
+    let args <- getArgs
         threes = groupsOf 3 args
         roadSystem = map (\[a,b,c] -> Section a b c) threes
         path = optimalPath roadSystem
